@@ -7,11 +7,11 @@ This is an example of how to easily build a Docker image for a Spring Boot appli
 *Make sure you have `kubectl` [configured with a cluster](https://cloud.google.com/kubernetes-engine/docs/how-to/creating-a-cluster).*
 
 ```shell
-IMAGE=<your image, eg. gcr.io/my-project/spring-boot-jib>
+IMAGE=<your image, eg. gcr.io/my-project/jibkubedemo>
 
 ./mvnw compile jib:build -Dimage=$IMAGE
 
-kubectl run spring-boot-jib --image=$IMAGE --port=8080 --restart=Never
+kubectl run jibkubedemo --image=$IMAGE --port=8080 --restart=Never
 
 # Wait until pod is running
 kubectl port-forward spring-boot-jib 8080 > /dev/null 2>&1 &
